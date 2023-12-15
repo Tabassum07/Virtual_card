@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,19 +32,40 @@
       margin-top: 20px;
       font-size: 24px;
       font-weight: bold;
-      color: #e44d26;
-      /* Red color for emphasis */
+      color: #e44d26; /* Red color for emphasis */
+      display: none; /* Initially hide the surprise message */
+    }
+
+    #viewSurpriseBtn {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
     }
   </style>
 </head>
-
 <body>
 
-  <div id="card">
-    <p id="message">Hello,<br> Wishing you a season filled with joy, laughter, and unforgettable moments. Thank you for your hard work and dedication throughout the year.</p>
-    <p id="surprise">🎁 Surprise: You've received a special gift! 🎉</p>
-  </div>
+<div id="card">
+  <p id="message">Dear [Recipient's Name],<br> Wishing you a season filled with joy, laughter, and unforgettable moments. Thank you for your hard work and dedication throughout the year.</p>
+  <p id="surprise">🎁 Surprise: You've received a special gift! 🎉</p>
+  <button id="viewSurpriseBtn" onclick="revealSurprise()">View Surprise</button>
+</div>
+
+<script>
+  function revealSurprise() {
+    var surpriseElement = document.getElementById("surprise");
+    var viewSurpriseBtn = document.getElementById("viewSurpriseBtn");
+    surpriseElement.style.display = "block";
+    viewSurpriseBtn.style.display = "none"; // Hide the button after revealing the surprise
+  }
+</script>
 
 </body>
-
 </html>
